@@ -1,0 +1,14 @@
+#content{
+    border-color: black;
+    border-style: solid;
+    padding: 5px;
+    margin: 20px;
+    background-clip: content-box;
+}
+#navbar{
+    border-color: black;
+    border-style: solid;
+    padding: 5px;
+    margin: 5px;
+    background-clip: content-box;
+}
