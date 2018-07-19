@@ -12,16 +12,16 @@
     <body>
         <div class="container">
             <div class = "row" id="navbar">
-                <div class="col-xs-9">Social Network</div>
-                <div class="col-xs-1">Photos</div>
-                <div class="col-xs-1">Friends</div>
-                <div class="col-xs-1">Login</div>
+                <div class="col-sm-9">Social Network</div>
+                <div class="col-sm-1">Photos</div>
+                <div class="col-sm-1">Friends</div>
+                <div class="col-sm-1">Login</div>
             </div>
             
             <br> <br>
             
             <div class = "row">
-                <div class="col-md-2 col-xs-12" id="left-nav-bar">
+                <div class="col-sm-3" id="left-nav-bar">
                     <form>
                         Name: <input type="text" name="name">
                     </form><br>
@@ -31,7 +31,7 @@
                     </form>
                 </div>
                 
-                <div class="col-md-10 col-xs-12" id="right-post-list">
+                <div class="col-sm-9" id="right-post-list">
                     Firstname Lastname <br> <br> <br>
                     
                     <div class=row id="content">

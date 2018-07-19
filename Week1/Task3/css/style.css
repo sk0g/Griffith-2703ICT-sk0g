@@ -1,8 +1,8 @@
 #content{
     border-color: black;
     border-style: solid;
-    padding: 5px;
     margin: 20px;
+    padding: 5px;
     background-clip: content-box;
 }
 #navbar{
@@ -11,4 +11,7 @@
     padding: 5px;
     margin: 5px;
     background-clip: content-box;
+}
+#left-nav-bar{
+    padding: 20px;
 }
