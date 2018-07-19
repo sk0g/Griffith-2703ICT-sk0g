@@ -40,10 +40,12 @@
             <?= $post->getUser()        ?> <br>
             <?= $post->getMessage()     ?> <br>
             <?= $post->getDate()        ?> <br>
-
+            
             <?php foreach($post->getComments() as $comment) { ?>
-            &emsp;&emsp; <?= $comment['user'], ': ', $comment['comment']; ?> <br>
-            <?php } ?> <br>
+                <div id='comment'>
+                    &emsp;&emsp; <?= $comment['user'], ': ', $comment['comment']; ?> <br>
+                </div>  
+                <?php } ?> <br>
         </div>
         <?php } ?>
     </body>

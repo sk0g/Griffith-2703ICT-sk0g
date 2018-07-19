@@ -10,6 +10,12 @@
     color: #18CAE6;
     background-color: black;
 }
+#comment{
+    border-style: dashed;
+    border-width: 1px;
+    margin: 5px;
+    padding: 2px;
+}
 img{
     -webkit-filter: invert(1);
     filter: invert(1)
