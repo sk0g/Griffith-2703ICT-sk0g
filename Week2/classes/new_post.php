@@ -1,6 +1,7 @@
 <?php
 namespace wp;
-require "classes/comment.php";
+require "comment.php";
+use wp\Comment;
 
 class Post{
     // create the variables required for the class
@@ -34,9 +35,9 @@ class Post{
         return $this->date; // returns date
     }
 
-    function addComment($user, $comment) {
+    function addComment($user, $message) {
         // add a comment to the list of comments
-        $this->comments[] = ;
+        $this->comments[] = new Comment($user, $message);
     }
 
     function getComments() {
