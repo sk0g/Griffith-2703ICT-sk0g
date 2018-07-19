@@ -1,5 +1,6 @@
 <?php
 namespace wp;
+require "classes/comment.php";
 
 class Post{
     // create the variables required for the class
@@ -35,7 +36,7 @@ class Post{
 
     function addComment($user, $comment) {
         // add a comment to the list of comments
-        $this->comments[] = array('user' => $user, 'comment' => $comment);
+        $this->comments[] = ;
     }
 
     function getComments() {
