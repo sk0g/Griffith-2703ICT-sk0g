@@ -9,23 +9,33 @@ include "includes/defs.php";
 # Set $number to the value entered in the form.
 $number = $_GET['number'];
 
+function refresh_page() {
+    $contents = file_get_contents('index.html');
+    echo $contents;
+}
+
 # Check $number is nonempty, numeric and between 2 and PHP_MAX_INT = 2^31-1.
 # (PHP makes it difficult to do this naturally; see the manual.)
+$should_refresh = TRUE;
 if (empty($number)) {
-    echo "Error: Missing value\n";
-    exit;
+    echo "Error: Missing value\n";    
 } else if (!is_numeric($number)) {
     echo "Error: Nonnumeric value: $number\n";
-    exit;
 } else if ($number < 2 || $number != strval(intval($number))) {
     echo "Error: Invalid number: $number\n";
-    exit;
 } else {
+    $should_refresh = FALSE;
     # Set $factors to the array of factors of $number.
     $factors = factors($number);
     # Set $factors to a single dot-separated string of numbers in the array.
     $factors = join(" . ", $factors);
 }
+
+if ($should_refresh) {
+    refresh_page();
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html>
