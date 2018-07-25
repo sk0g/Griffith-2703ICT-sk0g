@@ -59,3 +59,11 @@ if ($should_refresh) {
     </p>
   </body>
 </html>
+<?php 
+    $contents = file_get_contents('index.html'); // get contents of HTML file
+    // echo the contents with a modified input box
+    $contents = str_replace('<input type="text" name="number">',
+                            "<input type=\"text\" name=\"number\" value=\"$number\">",
+                            $contents);
+    echo $contents;
+?>
