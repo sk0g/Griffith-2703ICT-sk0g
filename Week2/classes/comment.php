@@ -1,7 +1,7 @@
 <?php
 namespace wp;
 
-class Comment{
+class Comment {
     protected $user;
     protected $message;
 

@@ -28,27 +28,27 @@ $pms = search($query);
 <h3>Results</h3>
 
 <?php 
-if (count($pms) == 0) {
+  if (count($pms) == 0) {
 ?>
-<p>No results found.</p>
+  <p>No results found.</p>
 <?php
-} else {
+  } else {
 ?>
-<table class="bordered">
-<thead>
-<tr><th>No.</th><th>Name</th><th>From</th><th>To</th><th>Duration</th><th>Party</th><th>State</th></tr>
-</thead>
-<tbody>
+  <table class="bordered">
+    <thead>
+      <tr><th>No.</th><th>Name</th><th>From</th><th>To</th><th>Duration</th><th>Party</th><th>State</th></tr>
+    </thead>
+  <tbody>
 <?php
-foreach($pms as $pm) {
-  print 
+  foreach($pms as $pm) {
+    print 
       "<tr><td>{$pm['index']}</td><td>{$pm['name']}</td><td>{$pm['from']}</td><td>{$pm['to']}</td><td>{$pm['duration']}</td><td>{$pm['party']}</td><td>{$pm['state']}</td></tr>\n";
-}
+  }
 ?>
-</tbody>
-</table>
+  </tbody>
+  </table>
 <?php
-}
+  }
 ?>
 
 <p><a href="index.html">New search</a></p>
@@ -61,5 +61,5 @@ foreach($pms as $pm) {
   <a href="show.php?file=includes/pms.php">includes/pms.php</a>
 </p>
 
-</body>
+  </body>
 </html>

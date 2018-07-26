@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>File source</title>
-  <meta charset="iso-8859-1">
-</head>
+    <head>
+        <title>File source</title>
+        <meta charset="iso-8859-1">
+    </head>
 
-<body>
+    <body>
 <?php
 /*
  * This script displays the contents of $file without
@@ -52,6 +52,6 @@
   fclose($fp);
   echo "</pre>\n";
 ?>
-</body>
+    </body>
 </html>
 
