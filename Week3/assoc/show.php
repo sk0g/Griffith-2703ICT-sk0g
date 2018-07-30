@@ -27,7 +27,7 @@
       echo "File name is not allowed: $file.<br>\n";
       exit;
   }
-
+  
   // Sanitise file name (unnecessary here?)
   $file = EscapeShellCmd(substr($file, 0, 40));
 
@@ -54,4 +54,3 @@
 ?>
     </body>
 </html>
-
