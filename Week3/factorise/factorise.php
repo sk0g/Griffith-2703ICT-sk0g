@@ -17,12 +17,13 @@ function refresh_page() {
 # Check $number is nonempty, numeric and between 2 and PHP_MAX_INT = 2^31-1.
 # (PHP makes it difficult to do this naturally; see the manual.)
 $should_refresh = TRUE;
+$error = "";
 if (empty($number)) {
-    echo "Error: Missing value\n";    
+    $error = "Error: Missing value\n";    
 } else if (!is_numeric($number)) {
-    echo "Error: Nonnumeric value: $number\n";
+    $error = "Error: Nonnumeric value: $number\n";
 } else if ($number < 2 || $number != strval(intval($number))) {
-    echo "Error: Invalid number: $number\n";
+    $error = "Error: Invalid number: $number\n";
 } else {
     $should_refresh = FALSE;
     # Set $factors to the array of factors of $number.
@@ -32,6 +33,7 @@ if (empty($number)) {
 }
 
 if ($should_refresh) {
+    echo $error;
     refresh_page();
     exit;
 }
@@ -48,7 +50,7 @@ if ($should_refresh) {
   <body>  
     <h1>Factorisation</h1>
 
-    <p><?php echo "$number = $factors"; ?></p>
+    <p><?php $error = "$number = $factors"; ?></p>
 
     <p><a href="index.html">Another?</a></p>
     <hr>
@@ -61,9 +63,9 @@ if ($should_refresh) {
 </html>
 <?php 
     $contents = file_get_contents('index.html'); // get contents of HTML file
-    // echo the contents with a modified input box
+    // $error = the contents with a modified input box
     $contents = str_replace('<input type="text" name="number">',
                             "<input type=\"text\" name=\"number\" value=\"$number\">",
                             $contents);
-    echo $contents;
+    $error = $contents;
 ?>
