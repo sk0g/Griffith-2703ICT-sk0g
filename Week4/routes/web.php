@@ -30,9 +30,12 @@ Route::get('greet', function() {
 Route::post('greeting', function() {
     $name = request('name');
     $age  = request('age');
-    $age += 1;
 
     return view('display_greeting')
         ->withName($name)
         ->withAge($age);
+});
+
+Route::get('foreach', function() {
+    return view('foreach')->withGet(request()->all());
 });
