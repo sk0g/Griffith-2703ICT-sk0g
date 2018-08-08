@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts/master')
+@section('title')
+    Greeting Form
+@endsection
 
-<head>
-	<title>Web Programming Examples</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../wp.css">
-</head>
-
-<body>
+@section('content')
 	<form method="post" action="greeting">
 		{{csrf_field()}}
 		<table>
@@ -30,4 +26,4 @@
 			</tr>
 		</table>
 	</form>
-</body>
+@endsection
