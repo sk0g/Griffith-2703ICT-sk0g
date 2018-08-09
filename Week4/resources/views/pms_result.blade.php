@@ -19,7 +19,7 @@
     @if (!empty($state))
         {{$state}}
     @endif
-    <br>
+    <br><br>
 
     @if (!empty($pms))
         <table class="bordered">

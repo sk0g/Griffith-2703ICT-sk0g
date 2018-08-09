@@ -39,7 +39,8 @@ Route::post('greeting', function() {
 });
 
 Route::get('foreach', function() {
-    return view('foreach')->withGet(request()->all());
+    return view('foreach')
+        ->withGet(request()->all());
 });
 
 Route::get('pms', function() {
