@@ -24,7 +24,9 @@ Route::get('/add', function() {
 });
 
 Route::get('/update_item/{id}', function($id) {
-    return view('update_item');
+    $item = get_item($id);
+    return view('update_item')
+        ->withItem($item);
 });
 
 Route::get('item_detail/{id}', function ($id) {
@@ -43,6 +45,16 @@ Route::post('/add_item_action', function() {
     } else {
         exit("Error creating item");
     }
+});
+
+Route::post('/update_item_action', function() {
+    $summary = request('summary');
+    $details = request('details');
+    $id      = request('id');
+
+    $sql = "update item set summary=?, details=? where id={$id}";
+    DB::update($sql, array($summary, $details));
+    return redirect("item_detail/{$id}");
 });
 
 Route::get('delete_item_action/{id}', function($id) {
