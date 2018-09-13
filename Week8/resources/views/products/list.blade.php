@@ -14,4 +14,6 @@
             </li>
         @endforeach
     </ul>
+
+    <a href="/product/create">Create a product</a>
 @endsection

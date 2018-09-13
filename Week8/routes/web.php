@@ -15,7 +15,7 @@ use App\Product;
 use App\Manufacturer;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/product');
 });
 
 Route::get('/test', function () {

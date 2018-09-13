@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Manufacturer;
 
 class ProductController extends Controller
 {
@@ -26,7 +27,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products/create')
+            ->withManufacturers(Manufacturer::all());
     }
 
     /**
@@ -37,7 +39,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->manufacturer_id = $request->manufacturer;
+        $product->save();
+        return redirect("/product/$product->id");
     }
 
     /**
@@ -60,7 +67,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('products/create')
+            ->withManufacturers(Manufacturer::all())
+            ->withItem(Product::find($id));
     }
 
     /**
@@ -72,7 +81,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->manufacturer_id = $request->manufacturer;
+        $product->save();
+        return redirect("/product/$product->id");
     }
 
     /**
@@ -83,6 +97,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::find($id)
+            ->delete();
+        return redirect('/');
     }
 }
