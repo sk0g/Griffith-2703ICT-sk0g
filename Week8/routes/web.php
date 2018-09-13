@@ -11,16 +11,29 @@
 |
 */
 
+use App\Product;
+use App\Manufacturer;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/test', function () {
-    $sql   = "select * from products";
-    $products = DB::select($sql);
+    $products = Product::all();
 
-    $sql   = "select * from manufacturers";
-    $manufacturers = DB::select($sql);
-
-    dump($products, $manufacturers);
+    dump($products);
 });
+
+Route::get('/productsBy/{id}', function($id) {
+    $manufacturer = Manufacturer::find($id);
+
+    dump($manufacturer->products);
+});
+
+Route::get('/manufacturerOf/{id}', function($id) {
+    $product = Product::find($id);
+
+    dump("Product:", $product, "Manufacturer:", $product->manufacturer);
+});
+
+Route::resource('product', 'ProductController');
